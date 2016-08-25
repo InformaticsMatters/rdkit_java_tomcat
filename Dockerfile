@@ -1,4 +1,4 @@
-FROM informaticsmatters/rdkit_java
+FROM informaticsmatters/rdkit_java:Release_2016_03_1
 MAINTAINER tdudgeon@informaticsmatters.com
 
 ENV CATALINA_HOME /usr/local/tomcat
