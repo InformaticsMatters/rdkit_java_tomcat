@@ -1,4 +1,4 @@
-FROM informaticsmatters/rdkit_java
+FROM informaticsmatters/rdkit_java:Release_2017_03_1
 MAINTAINER tdudgeon@informaticsmatters.com
 
 USER root
