@@ -1,6 +1,13 @@
 FROM informaticsmatters/rdkit_java
 MAINTAINER tdudgeon@informaticsmatters.com
 
+USER root
+
+RUN apt-get update && apt-get install -y \
+ curl &&\
+ apt-get upgrade -y &&\
+ apt-get clean -y
+
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN mkdir -p "$CATALINA_HOME"
@@ -23,7 +30,7 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-keys \
 	F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
 
 ENV TOMCAT_MAJOR 7
-ENV TOMCAT_VERSION 7.0.70
+ENV TOMCAT_VERSION 7.0.78
 ENV TOMCAT_TGZ_URL https://www.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
 
 RUN set -x \
