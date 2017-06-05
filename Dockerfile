@@ -1,6 +1,8 @@
 FROM informaticsmatters/rdkit_java:latest
 MAINTAINER tdudgeon@informaticsmatters.com
 
+USER root
+
 RUN apt-get update && apt-get install -y \
  curl &&\
  apt-get upgrade -y &&\
